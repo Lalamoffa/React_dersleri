@@ -1,0 +1,52 @@
+.image {
+    width: 200px;
+    height: 220px;
+    border-radius: 10px 10px 0 0;
+}
+
+.card {
+    width: 200px;
+    height: 400px;
+    box-shadow: 1px 4px 3px lightgray;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.card:hover {
+    box-shadow: 1px 4px 3px rgb(153, 153, 153);
+    transition: all 0.6s;
+    cursor: pointer;
+}
+
+.detail-button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgb(116, 114, 112);
+    color: white;
+}
+
+.detail-button:hover {
+    cursor: pointer;
+    background-color: rgb(231, 184, 122);
+    transition: all 0.6s;
+
+}
+
+.description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* Yalnız 2 sətir göstər */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /* Artan məzmunu gizlət */
+    text-overflow: ellipsis;
+    /* Artıq məzmunu ... ilə göstər */
+    line-height: 1.2em;
+    /* Satır hündürlüyünü təyin et */
+    max-height: 2.0em;
+    /* 2 sətir üçün maksimum hündürlük */
+    white-space: normal;
+    /* Məzmunun sətirə sığmadığında sarmasını təmin et */
+    padding: 0.3em 0.8em 0.3em 0.8em;
+}

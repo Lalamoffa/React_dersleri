@@ -1,0 +1,70 @@
+.App {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+body {
+    background-color: cadetblue;
+
+}
+
+.todo-create {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.todo-input {
+    width: 100%;
+    padding: 10px 0px 10px 10px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid lightgray
+}
+
+.todo-button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 15px;
+    background-color: rgb(252, 216, 15);
+    cursor: pointer;
+}
+
+.main {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 30px;
+    margin-top: 50px;
+    background-color: aliceblue;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: 1px solid lightgray;
+    padding: 10px 0px;
+    margin-top: 10px;
+}
+
+.todo-icon {
+    font-size: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
