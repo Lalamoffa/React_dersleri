@@ -5,12 +5,17 @@ import { CiLight } from "react-icons/ci";
 import { IoMoonSharp } from "react-icons/io5";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Badge from '@mui/material/Badge';
+import { useDispatch, useSelector } from 'react-redux';
+import { setDrawer } from '../redux/slices/basketSlice';
 
 export default function Header() {
 
     const [theme, setTheme] = useState(false);
-    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
+    const navigate = useNavigate();
+    const { products } = useSelector((store) => store.basket);
     const changeTheme = () => {
         const root = document.getElementById("root");
         setTheme(!theme);
@@ -38,7 +43,10 @@ export default function Header() {
                     {
                         theme ? <IoMoonSharp className='icon' onClick={changeTheme} /> : <CiLight className='icon' onClick={changeTheme} />
                     }
-                    <SlBasket className='icon' />
+                    <Badge onClick={() => dispatch(setDrawer())} badgeContent={products.length} color="error">
+                        <SlBasket className='icon' />
+                    </Badge>
+
                 </div>
             </div>
         </div>

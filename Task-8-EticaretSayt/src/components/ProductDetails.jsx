@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { setSelectedProduct } from '../redux/slices/poductSlice'
 import { CiCirclePlus } from "react-icons/ci";
 import { CiCircleMinus } from "react-icons/ci";
+import { addToBasket, calculateBasket } from '../redux/slices/basketSlice';
 
 
 function ProductDetails() {
@@ -19,6 +20,20 @@ function ProductDetails() {
     const decrement = () => {
         setCount(count - 1);
     }
+
+    const addBasket = ()=>{
+        const payload={
+            id:id,
+            count:count,
+            price:price,
+            image:image,
+            title:title,
+            description
+        }
+        dispatch(addToBasket(payload));
+        dispatch(calculateBasket());
+    }
+
 
     useEffect(() => {
         getProductById();
@@ -45,7 +60,9 @@ function ProductDetails() {
                     <CiCirclePlus onClick={increment} style={{ fontSize: '40px', marginRight: '10px', cursor: 'pointer' }} /> <span style={{ fontSize: '35px' }} >{count}</span> <CiCircleMinus onClick={decrement} style={{ fontSize: '40px', marginLeft: '10px', cursor: 'pointer' }} />
                 </div>
                 <div>
-                    <button style={{ marginTop: '25px', border: 'none', padding: "10px", borderRadius: '5px', backgroundColor: 'rgb(185, 76, 76)', color: "#fff", cursor: 'pointer' }}>Sebete Ekle</button>
+                    <button
+                    onClick={addBasket}
+                    style={{ marginTop: '25px', border: 'none', padding: "10px", borderRadius: '5px', backgroundColor: 'rgb(185, 76, 76)', color: "#fff", cursor: 'pointer' }}>Sebete Ekle</button>
 
                 </div>
             </div>
