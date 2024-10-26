@@ -31,7 +31,7 @@ export default function Header() {
 
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexDirection: 'row' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between',         alignItems: 'center', flexDirection: 'row' }}>
             <div onClick={() => navigate('/')} className='flex-row'>
                 <img className='logo' src="./src/images/logo.png" alt="logo" />
                 <p className='logo-text'>Lala Mammadova</p>

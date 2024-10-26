@@ -40,10 +40,10 @@ export const basketSlice = createSlice({
             state.products && state.products.map((product) => {
                 state.totalAmount += product.price * product.count;
             })
-        }, 
-        updateProducts:(state, action)=>{
+        },
+        updateProducts: (state, action) => {
             state.products = action.payload;
-            writeFromBasketToStorage(state.products); 
+            writeFromBasketToStorage(state.products);
         }
     }
 })
